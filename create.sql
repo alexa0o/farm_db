@@ -3,7 +3,7 @@ CREATE SCHEMA farm_db;
 
 DROP TABLE IF EXISTS farm_db.animal;
 CREATE TABLE farm_db.animal (
- animal_id        INT PRIMARY KEY,
+ animal_id        SERIAL PRIMARY KEY,
  animal_nm        VARCHAR(30) NOT NULL,
  animal_desc      VARCHAR(30),
  birth_dt  DATE,
@@ -12,7 +12,7 @@ CREATE TABLE farm_db.animal (
 
 DROP TABLE IF EXISTS farm_db.worker;
 CREATE TABLE farm_db.worker (
- worker_id       INT PRIMARY KEY,
+ worker_id       SERIAL PRIMARY KEY,
  first_nm        VARCHAR(30) NOT NULL,
  middle_nm       VARCHAR(30),
  last_nm         VARCHAR(30) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE farm_db.worker (
 
 DROP TABLE IF EXISTS farm_db.task;
 CREATE TABLE farm_db.task (
- task_id        INT PRIMARY KEY,
+ task_id        SERIAL PRIMARY KEY,
  task_desc      VARCHAR(50) NOT NULL,
  start_dt       DATE,
  deadline_dttm  TIMESTAMP,
@@ -31,14 +31,14 @@ CREATE TABLE farm_db.task (
 
 DROP TABLE IF EXISTS farm_db.garden;
 CREATE TABLE farm_db.garden (
- garden_id        INT PRIMARY KEY,
+ garden_id        SERIAL PRIMARY KEY,
  garden_desc      VARCHAR(30),
  address_txt      TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS farm_db.item;
 CREATE TABLE farm_db.item (
- item_id       INT PRIMARY KEY,
+ item_id       SERIAL PRIMARY KEY,
  item_desc     VARCHAR(30),
  item_nm       VARCHAR(15) NOT NULL,
  item_cnt     INT NOT NULL
@@ -46,7 +46,7 @@ CREATE TABLE farm_db.item (
 
 DROP TABLE IF EXISTS farm_db.supplier;
 CREATE TABLE farm_db.supplier (
- supplier_id      INT PRIMARY KEY,
+ supplier_id      SERIAL PRIMARY KEY,
  supplier_desc    VARCHAR(30),
  supplier_nm      VARCHAR(15) NOT NULL,
  address_txt      TEXT NOT NULL
@@ -54,7 +54,7 @@ CREATE TABLE farm_db.supplier (
 
 DROP TABLE IF EXISTS farm_db.building;
 CREATE TABLE farm_db.building (
- building_id       INT PRIMARY KEY,
+ building_id       SERIAL PRIMARY KEY,
  type_nm           VARCHAR(15) NOT NULL,
  address_txt       TEXT NOT NULL
 );
