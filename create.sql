@@ -39,6 +39,7 @@ CREATE TABLE farm_db.garden (
 DROP TABLE IF EXISTS farm_db.item;
 CREATE TABLE farm_db.item (
  item_id       SERIAL PRIMARY KEY,
+ supplier_id   INT REFERENCES farm_db.supplier(supplier_id),
  item_desc     VARCHAR(30),
  item_nm       VARCHAR(15) NOT NULL,
  item_cnt     INT NOT NULL
